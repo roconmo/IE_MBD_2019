@@ -1,0 +1,706 @@
+{
+  "name": "Domestic Violence",
+  "intents": [
+    {
+      "intent": "story",
+      "examples": [
+        {
+          "text": "Today"
+        },
+        {
+          "text": "We had a big fight yesterday, he hit me and threatened to leave"
+        },
+        {
+          "text": "Yesterday we had a big fight. He started to yell at me because he saw a conversation with our neighbor and threatened that he would leave and take all of our money with him!"
+        },
+        {
+          "text": "yesterday we had a big fight...he yelled at me and threatened me and my kids!"
+        },
+        {
+          "text": "kids"
+        },
+        {
+          "text": "girlfriend"
+        },
+        {
+          "text": "boyfriend"
+        },
+        {
+          "text": "children"
+        },
+        {
+          "text": "hit"
+        },
+        {
+          "text": "hate"
+        },
+        {
+          "text": "leave"
+        },
+        {
+          "text": "threatened"
+        },
+        {
+          "text": "fight"
+        },
+        {
+          "text": "Yell"
+        },
+        {
+          "text": "Last week"
+        },
+        {
+          "text": "Yesterday"
+        }
+      ],
+      "description": "The story the user tells to chatbot to let off the weight"
+    },
+    {
+      "intent": "redirect",
+      "examples": [
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "Ok"
+        },
+        {
+          "text": "Please"
+        },
+        {
+          "text": "Alright"
+        },
+        {
+          "text": "yes, please"
+        },
+        {
+          "text": "Okay"
+        }
+      ],
+      "description": "Confirm that the user wants to be redirected to get help"
+    },
+    {
+      "intent": "thankyou",
+      "examples": [
+        {
+          "text": "thank you ana"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "Thanks"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "iconfirm",
+      "examples": [
+        {
+          "text": "I confirm"
+        },
+        {
+          "text": "\"I confirm\""
+        }
+      ]
+    },
+    {
+      "intent": "difficulttotalk",
+      "examples": [
+        {
+          "text": "Well, it is difficult for me to talk about what is happening"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "I don't want to talk"
+        },
+        {
+          "text": "I prefer not to"
+        },
+        {
+          "text": "I don't want to talk about it"
+        }
+      ],
+      "description": "Words and phrases to understand is hard to talk about domestic violence"
+    },
+    {
+      "intent": "bad",
+      "examples": [
+        {
+          "text": "Sad"
+        },
+        {
+          "text": "Not good"
+        },
+        {
+          "text": "Horrible"
+        },
+        {
+          "text": "Terrible"
+        },
+        {
+          "text": "I'm not sure"
+        },
+        {
+          "text": "bad"
+        }
+      ],
+      "description": "Words to describe the user is having a bad time"
+    },
+    {
+      "intent": "name",
+      "examples": [
+        {
+          "text": "Alejandra"
+        },
+        {
+          "text": "Juan"
+        },
+        {
+          "text": "Camila"
+        },
+        {
+          "text": "Daniel"
+        }
+      ],
+      "description": "Names of the users"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-person",
+      "values": []
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_16_1562626673660",
+      "event_name": "focus",
+      "dialog_node": "handler_18_1562626673660",
+      "previous_sibling": "handler_17_1562626673660"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_16_1562626673660",
+      "event_name": "input",
+      "dialog_node": "handler_17_1562626673660"
+    },
+    {
+      "type": "event_handler",
+      "parent": "Welcome",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1562626217961",
+      "previous_sibling": "slot_16_1562626673660"
+    },
+    {
+      "type": "slot",
+      "parent": "Welcome",
+      "dialog_node": "slot_16_1562626673660"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1562612669882",
+      "metadata": {},
+      "variable": "$person",
+      "dialog_node": "slot_19_1562626688144"
+    },
+    {
+      "type": "slot",
+      "parent": "node_6_1562621216495",
+      "dialog_node": "slot_26_1562627609249"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_26_1562627609249",
+      "event_name": "focus",
+      "dialog_node": "handler_28_1562627609249",
+      "previous_sibling": "handler_27_1562627609249"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_26_1562627609249",
+      "event_name": "input",
+      "dialog_node": "handler_27_1562627609249"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_19_1562626688144",
+      "context": {
+        "person": "@sys-person"
+      },
+      "metadata": {},
+      "conditions": "@sys-person",
+      "event_name": "input",
+      "dialog_node": "handler_20_1562626688144",
+      "previous_sibling": "handler_21_1562626688144"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Could you please tell me your name?"
+      },
+      "parent": "slot_19_1562626688144",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_21_1562626688144"
+    },
+    {
+      "type": "frame",
+      "title": "Conversation_get.name",
+      "output": {
+        "generic": [
+          {
+            "time": 2400,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Nice to meet you $person,  I’m here to help. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 3000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "How are you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#name || @sys-person",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1562612669882",
+      "digress_out": "allow_all",
+      "previous_sibling": "Welcome",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "Conversation_bad",
+      "output": {
+        "generic": [
+          {
+            "time": 3000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Please tell me more. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 3000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "This is a private conversation between you and me."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#bad",
+      "dialog_node": "node_2_1562613189719",
+      "previous_sibling": "node_1_1562612669882"
+    },
+    {
+      "type": "standard",
+      "title": "thank you",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "THANK YOU <3 "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#thankyou",
+      "dialog_node": "node_1_1562941438891",
+      "previous_sibling": "node_6_1562621216495"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "time": 9999,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "$person, if you experienced any of the situations described above you are in an abusive relationship and you must be alert and act on it. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 9000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "I'm here for you...talking about it is the first step, asking for help is the next one."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1562621174865"
+      },
+      "conditions": "abusive relationship",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_31_1562628118988",
+      "previous_sibling": "node_30_1562627867860"
+    },
+    {
+      "type": "standard",
+      "title": "Conversation_redirect",
+      "output": {
+        "generic": [
+          {
+            "time": 8000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "I want to redirect you to the official government site where we have professionals ready to help you $person in this difficult situation. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 7024,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Please confirm so I can redirect you by typing: I confirm"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "dialog_node": "node_5_1562621174865",
+      "previous_sibling": "node_31_1562628118988"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_1_1562941438891"
+    },
+    {
+      "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "time": 4000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Thank you $person for your bravery. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 3989,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "I’ll always be here to help.  \n-Ana \n \nDelegación del Gobierno para la Violencia de Género: \"http://www.violenciagenero.igualdad.mpr.gob.es\""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#iconfirm",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_6_1562621216495",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_5_1562621174865"
+    },
+    {
+      "type": "standard",
+      "title": "Questions",
+      "output": {
+        "generic": [
+          {
+            "time": 3992,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": " Does your partner make you feel inferior, useless, ridiculous or makes fun of your beliefs (religious, politic, personal)? \n Criticizes and disqualifies your family, friends, neighbors or denies you from relating to them, gets jealous or starts a fight? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 10000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": " Controls your money, how you dress, your calls, books, relationships and time?  \n Do you sometimes fear his gestures or how he/she looks at you? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "time": 9000,
+            "typing": true,
+            "response_type": "pause"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_31_1562628118988"
+      },
+      "conditions": "#redirect",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_30_1562627867860",
+      "previous_sibling": "node_4_1562620774552"
+    },
+    {
+      "type": "standard",
+      "title": "Conversation_difficult_to_talk",
+      "output": {
+        "generic": [
+          {
+            "time": 3000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Try to talk to me. Talking will take some weight off your shoulders..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 5000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "I’m listening"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#difficulttotalk",
+      "dialog_node": "node_3_1562620303600",
+      "previous_sibling": "node_2_1562613189719"
+    },
+    {
+      "type": "standard",
+      "title": "Conversation_story",
+      "output": {
+        "generic": [
+          {
+            "time": 3991,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Thank you $person for sharing this...remember that you are never alone and sharing this with a friend or a family member will help you even more."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 7999,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "I want to give you some questions for you to think about your current relationship. Ok?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#story || @sys-person",
+      "dialog_node": "node_4_1562620774552",
+      "previous_sibling": "node_3_1562620303600"
+    },
+    {
+      "type": "frame",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "time": 1890,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "Hi, my name is Ana. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "time": 2000,
+            "typing": true,
+            "response_type": "pause"
+          },
+          {
+            "values": [
+              {
+                "text": "What is your name?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "welcome",
+      "digress_in": "does_not_return",
+      "dialog_node": "Welcome",
+      "digress_out": "allow_all",
+      "digress_out_slots": "not_allowed"
+    }
+  ],
+  "workspace_id": "6039e4cd-0581-4307-9d51-9078a391d5b7",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
